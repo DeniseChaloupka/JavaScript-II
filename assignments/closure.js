@@ -3,7 +3,7 @@
 
 let monster = "Monsters";
 let trained = "trained";
-let lineThree = "no commin' back"
+let lineThree = "no commin' back";
 
 function lyricLineOne() {
   const realMonster = "are real";
@@ -14,7 +14,7 @@ function lyricLineOne() {
     console.log(`and they're ${trained} ${verylyrics}`);
 
     function lyricLineThree() {
-      const lyrical = "they just laughed"
+      const lyrical = "they just laughed";
       console.log(`And there's ${lineThree} and ${lyrical} at how I feel`);
 
     }
@@ -23,6 +23,7 @@ function lyricLineOne() {
   }
 
   lyricLineTwo();
+
 }
 lyricLineOne();
 
@@ -54,7 +55,20 @@ console.log(newCounter());
 
 // ==== Challenge 3: Create a counter function with an object that can increment and decrement ====
 const counterFactory = () => {
+  let count = 0;
+  return {
+    increment: () => (++count),
+    decrement: () => (--count), //?
+  };
+};
+
+const newCounterFactory = counterFactory();
+newCounterFactory.increment(); // 1
+newCounterFactory.increment(); // 2
+newCounterFactory.increment(); // 3
+newCounterFactory.decrement(); // 2
+newCounterFactory.decrement(); // 1
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
-};
+
